@@ -288,7 +288,7 @@ class AWSSRP:
 
             if tokens["ChallengeName"] == self.NEW_PASSWORD_REQUIRED_CHALLENGE:
                 challenge_response.update(
-                    {"USERNAME": auth_params["USERNAME"], "NEW_PASSWORD": new_password,}
+                    {"USERNAME": auth_params["USERNAME"], "NEW_PASSWORD": new_password}
                 )
                 new_password_response = boto_client.respond_to_auth_challenge(
                     ClientId=self.client_id,
